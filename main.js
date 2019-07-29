@@ -59,26 +59,31 @@
 // cat.halum(4);
 // cat.meow(5);
 
-
 ///Building promise
-const spacePeople = () => {
-  return new Promise((resolves, reject) => {
-    const api = "http://api.open-notify.org/astros.json";
-    const request = new XMLHttpRequest();
-    request.open("GET", api);
-    request.onload = () => {
-      if (request.status == 200) {
-        resolves(JSON.parse(request.response));
-      } else {
-        reject(Error(request.statusText));
-      }
-    };
-    request.onerror = err =>reject(err);
-    request.send();
-  });
-};
+// const spacePeople = () => {
+//   return new Promise((resolves, reject) => {
+//     const api = "http://api.open-notify.org/astros.json";
+//     const request = new XMLHttpRequest();
+//     request.open("GET", api);
+//     request.onload = () => {
+//       if (request.status == 200) {
+//         resolves(JSON.parse(request.response));
+//       } else {
+//         reject(Error(request.statusText));
+//       }
+//     };
+//     request.onerror = err =>reject(err);
+//     request.send();
+//   });
+// };
 
-spacePeople().then(
-  spaceData => console.log(spaceData),
-  err=> console.error(new Error('Can not open space people'))
-);
+// spacePeople().then(
+//   spaceData => console.log(spaceData),
+//   err=> console.error(new Error('Can not open space people'))
+// );
+
+const getPeopleInSpace = () =>
+  fetch("http://api.open-notify.org/astros.json")
+  .then(res =>res.json());
+
+  getPeopleInSpace().then(console.log)
