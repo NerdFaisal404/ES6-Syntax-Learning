@@ -87,3 +87,15 @@ const getPeopleInSpace = () =>
   .then(res =>res.json());
 
   getPeopleInSpace().then(console.log)
+
+
+  ///Defautl paremeters
+
+  function getCity(city ="Dhaka", district="Dhaka"){
+   // return city.toLowerCase() + district.toLowerCase();
+
+    return `${city.toLowerCase()} ${district.toLowerCase()}`;
+
+  }
+
+  console.log(getCity());
