@@ -104,6 +104,9 @@ const getPeopleInSpace = () =>
   ///Destructing assignments
 
   const address ={
+    house:{
+
+    },
     city: 'Dhaka',
     country: 'Bangladesh',
     region: 'Asia'
@@ -112,3 +115,22 @@ const getPeopleInSpace = () =>
 
   const {city : currentCity, country} = address;
   console.log(currentCity, country);
+
+
+  const arr = [1,2,3,4,5];
+
+   arr.forEach(el=>console.log(el));
+  arr.forEach(el=>{
+    
+  });
+
+  for(const el  of arr){
+    if(el===3)break;
+    console.log(el);
+  }
+
+  for(const [i,el]  of arr.entries()){
+    if(el===3)break;
+    console.log(i,el);
+  }
+  
