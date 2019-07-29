@@ -99,3 +99,16 @@ const getPeopleInSpace = () =>
   }
 
   console.log(getCity());
+
+
+  ///Destructing assignments
+
+  const address ={
+    city: 'Dhaka',
+    country: 'Bangladesh',
+    region: 'Asia'
+
+  };
+
+  const {city : currentCity, country} = address;
+  console.log(currentCity, country);
